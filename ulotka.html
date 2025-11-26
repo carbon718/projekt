@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulotka SmartBottle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script 
+src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        @import 
+url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .flyer-page {
+            width: 148mm; /* A5 width roughly */
+            height: 210mm; /* A5 height */
+            background-color: #111;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .neon-text {
+            color: #ccff00;
+            text-shadow: 0 0 10px rgba(204, 255, 0, 0.5);
+        }
+
+        .bg-neon {
+            background-color: #ccff00;
+            color: black;
+        }
+
+        .texture-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 50% 50%, 
+rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .content {
+            z-index: 10;
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .qr-placeholder {
+            background-image: 
+url('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://carbon718.github.io/projekt/');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STRONA 1: FRONT -->
+    <div class="flyer-page">
+        <div class="texture-overlay"></div>
+        
+        <!-- Header -->
+        <div class="content justify-between">
+            <div class="text-center mt-4">
+                <p class="text-gray-400 tracking-[0.3em] text-sm uppercase 
+mb-2">SmartHydrate x WK DZIK</p>
+                <h1 class="text-4xl font-black uppercase leading-tight">
+                    Twój organizm<br>
+                    <span class="neon-text">to nie kaktus</span>
+                </h1>
+                <p class="text-sm mt-2 font-light">Zainwestuj w 
+nawodnienie z technologią przyszłości.</p>
+            </div>
+
+            <!-- Central Visual (Bottle Representation) -->
+            <div class="flex justify-center items-center my-4 relative">
+                <div class="absolute w-64 h-64 bg-green-500 rounded-full 
+blur-[80px] opacity-20"></div>
+                <!-- Bottle Graphic Placeholder -->
+                <div class="relative border-4 border-[#ccff00] 
+rounded-[2rem] h-64 w-28 flex flex-col items-center justify-end 
+overflow-hidden bg-gray-900 shadow-[0_0_30px_rgba(204,255,0,0.3)]">
+                    <div class="absolute top-4 text-[#ccff00] text-2xl 
+font-bold animate-pulse">
+                        <i class="fa-brands fa-bluetooth-b"></i>
+                    </div>
+                    <div class="w-full h-[60%] bg-[#ccff00] opacity-80 
+rounded-t-lg relative">
+                        <div class="absolute w-full top-0 h-4 bg-white 
+opacity-30 animate-pulse"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="grid grid-cols-3 gap-2 text-center mb-8">
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full border 
+border-gray-700 flex items-center justify-center mb-2 bg-gray-800">
+                        <i class="fa-solid fa-droplet text-blue-400"></i>
+                    </div>
+                    <p class="text-xs font-bold">MONITORUJE</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full border 
+border-gray-700 flex items-center justify-center mb-2 bg-gray-800">
+                        <i class="fa-solid fa-mobile-screen 
+text-[#ccff00]"></i>
+                    </div>
+                    <p class="text-xs font-bold">PRZYPOMINA</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full border 
+border-gray-700 flex items-center justify-center mb-2 bg-gray-800">
+                        <i class="fa-solid fa-gift text-purple-400"></i>
+                    </div>
+                    <p class="text-xs font-bold">NAGRADZA</p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="bg-white text-black p-4 -mx-8 -mb-8 text-center 
+skew-y-1">
+                <h2 class="font-black text-xl uppercase 
+italic">SmartBottle</h2>
+                <p class="text-xs font-bold">Powered by WK DZIK</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- STRONA 2: TYŁ -->
+    <div class="flyer-page">
+        <div class="texture-overlay"></div>
+        
+        <div class="content">
+            <!-- Header -->
+            <h2 class="text-2xl font-black uppercase mb-4 text-center">
+                Nie pij <span class="text-gray-500 line-through">za 
+darmo</span><br>
+                <span class="neon-text">Zarabiaj pijąc</span>
+            </h2>
+
+            <!-- Opis działania -->
+            <p class="text-xs text-gray-300 text-center mb-6">
+                SmartBottle łączy się z aplikacją, analizuje Twoją 
+aktywność i nagradza Cię za każdy litr. Wymieniaj punkty na epickie 
+nagrody.
+            </p>
+
+            <!-- Tabela nagród -->
+            <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 
+mb-6 relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-red-600 text-white 
+text-[10px] font-bold px-2 py-1 transform rotate-12 translate-x-2 
+-translate-y-1">HIT!</div>
+                <h3 class="text-[#ccff00] font-bold uppercase text-sm mb-3 
+border-b border-gray-700 pb-1">Cennik Punktów (Przykłady)</h3>
+                
+                <ul class="space-y-3 text-xs">
+                    <li class="flex justify-between items-center">
+                        <span class="flex items-center"><i class="fa-solid 
+fa-carrot mr-2 text-orange-500"></i> 1 kg Buraków / Marchewki</span>
+                        <span class="font-bold">25 pkt</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span class="flex items-center"><i class="fa-solid 
+fa-bolt mr-2 text-yellow-400"></i> Zgrzewka DZIKA</span>
+                        <span class="font-bold">3092 pkt</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span class="flex items-center"><i class="fa-solid 
+fa-mountain mr-2 text-white"></i> Łoscypki od górola</span>
+                        <span class="font-bold">5000 pkt</span>
+                    </li>
+                    <li class="flex justify-between items-center 
+bg-gray-800 p-1 rounded border border-gray-600">
+                        <span class="flex items-center font-bold 
+text-red-400"><i class="fa-solid fa-fire mr-2"></i> 50 KG WĘGLA NA 
+ZIMĘ</span>
+                        <span class="font-bold text-red-400">30 000 
+pkt</span>
+                    </li>
+                </ul>
+                <div class="mt-3 text-[10px] text-gray-400 text-center 
+italic">
+                    + Bon na Hot-doga z sosem Julii Żugaj w subskrypcji!
+                </div>
+            </div>
+
+            <!-- Modele -->
+            <div class="grid grid-cols-3 gap-2 mb-6">
+                <div class="bg-gray-800 p-2 rounded text-center border 
+border-gray-700">
+                    <i class="fa-solid fa-feather text-gray-400 mb-1"></i>
+                    <h4 class="font-bold text-[10px] uppercase">Light</h4>
+                    <p class="text-[9px] text-gray-400">0.5L</p>
+                </div>
+                <div class="bg-gray-800 p-2 rounded text-center border 
+border-[#ccff00]">
+                    <i class="fa-solid fa-briefcase text-[#ccff00] 
+mb-1"></i>
+                    <h4 class="font-bold text-[10px] uppercase 
+text-[#ccff00]">Premium</h4>
+                    <p class="text-[9px] text-gray-400">1.0L</p>
+                </div>
+                <div class="bg-gray-800 p-2 rounded text-center border 
+border-gray-700">
+                    <i class="fa-solid fa-running text-gray-400 mb-1"></i>
+                    <h4 class="font-bold text-[10px] uppercase">Sport</h4>
+                    <p class="text-[9px] text-gray-400">0.75L</p>
+                </div>
+            </div>
+
+            <!-- CTA & QR -->
+            <div class="flex bg-[#ccff00] text-black rounded-xl p-3 
+items-center mt-auto shadow-[0_0_20px_rgba(204,255,0,0.4)]">
+                <div class="flex-1">
+                    <p class="font-black text-lg leading-none 
+uppercase">Pobierz apkę</p>
+                    <p class="text-xs font-medium leading-tight mt-1">i 
+zacznij zbierać <br>punkty już dziś!</p>
+                </div>
+                <div class="w-16 h-16 bg-white p-1 rounded ml-2">
+                    <div class="w-full h-full qr-placeholder"></div>
+                </div>
+            </div>
+            <p class="text-[9px] text-center mt-2 
+text-gray-500">carbon718.github.io/projekt</p>
+
+        </div>
+    </div>
+
+</body>
+</html>
